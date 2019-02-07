@@ -40,7 +40,6 @@ class ShoppingList extends Component{
                                         className="remove-btn" 
                                         color="danger" 
                                         size="sm"
-                                        style = {{marginRight:'1rem'}}
                                         onClick={()=>{
                                             this.setState(state => ({
                                                 items: state.items.filter(item => item.id !== id)
