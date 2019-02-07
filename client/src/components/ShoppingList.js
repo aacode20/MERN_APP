@@ -20,7 +20,7 @@ class ShoppingList extends Component{
                 <Button 
                     color="dark"
                     style={{marginBottom: '2rem'}} 
-                    onclick={() => {
+                    onClick={() => {
                         const name = prompt('Enter item name');  //asking for basic prompt upon pressing butotn
                         if(name){
                             this.setState(state => ({ //if the prompt wasn't empty, create an item like above to add to the state
@@ -41,7 +41,7 @@ class ShoppingList extends Component{
                                         color="danger" 
                                         size="sm"
                                         style = {{marginRight:'1rem'}}
-                                        onclick={()=>{
+                                        onClick={()=>{
                                             this.setState(state => ({
                                                 items: state.items.filter(item => item.id !== id)
                                             }));
