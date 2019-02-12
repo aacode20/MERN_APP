@@ -39,12 +39,12 @@ class ItemModal extends Component{
         return(
             <div>
                 <Button
-                    color='dark'
-                    style={{marginBottom: '2rem', marginLeft:'1rem'}}
+                    color='success'
+                    style={{marginBottom: '2rem', marginRight:'1rem', float:'right'}}
                     onClick={this.toggle}
                     outline
                 >
-                    Add Item
+                    &#43;
                 </Button>
 
                 <Modal

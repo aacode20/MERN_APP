@@ -27,19 +27,19 @@ export default class AppNavBar extends React.Component {
   render() {
     return (
       <div>
-        <Navbar color="dark" dark expand="sm" className="mb-5">
+        <Navbar color="light" dark expand="sm" className="mb-5">
           <Container>
-            <NavbarBrand href="/">Plan</NavbarBrand>
+            <NavbarBrand href="/" style={{color: 'black'}}>Plan</NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
                 <NavItem>
-                  <NavLink href="https://github.com/aacode20/MERN_APP">
+                  <NavLink style={{color: 'black'}} href="https://github.com/aacode20/MERN_APP">
                     Github Repo
                   </NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="https://linkedin.com/in/armand-asnani">
+                  <NavLink style={{color: 'black'}} href="https://linkedin.com/in/armand-asnani">
                     LinkedIn
                   </NavLink>
                 </NavItem>

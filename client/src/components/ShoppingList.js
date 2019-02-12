@@ -4,15 +4,15 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { connect } from 'react-redux';
 import { getItems, deleteItem } from '../actions/itemActions';
 import propTypes from 'prop-types';
+import InfoModal from './InfoModal';
 //PropTypes are a form of validation for component properties, which we will use for holding our items
 
 class ShoppingList extends Component{
 
 
     componentDidMount(){
-        this.props.getItems(); //TODO: figure out how this call works and makes ti so that this.props.item now holds the state for our application
+        this.props.getItems(); 
     }//this is a react lifecycle method, which runs when this ShoppingList component mounts to our page in App.js
-     //TODO: Figure out what a react lifecycle method is
 
     onClickDelete = (id) => {
         this.props.deleteItem(id); //because we used connect at the bottom, we can now access deleteItem through the props property, and call the deleteItem function with the id
@@ -22,8 +22,9 @@ class ShoppingList extends Component{
     render(){
         const { items } = this.props.item; //destructuring, i.e getting a reference to items directly 
         return(
-            <Container>
+            <Container style={{float:'right'}}>
                 <ListGroup>
+                    
                    <TransitionGroup className="shopping-list">
                         {items.map(({ _id, name }) => (
                             <CSSTransition key={_id} timeout={500} classNames="fade">
@@ -38,6 +39,16 @@ class ShoppingList extends Component{
                                         onClick={this.onClickDelete.bind(this,_id)}>
                                         &times;
                                     </Button>
+                                    <Button
+                                        className='btn'
+                                        color='dark'
+                                        outline
+                                        color="secondary"
+                                        size="sm"
+                                        style={{float:'right', marginRight:'0.75rem'}}
+                                    >
+                                            &#46;&#46;&#46;
+                                    </Button>
                                 </ListGroupItem>
                             </CSSTransition>
                         ))}
@@ -48,7 +59,7 @@ class ShoppingList extends Component{
     }
 }
 
-//TODO: Figure out what everything below is!
+//TODO:  Figure out what everything below is!
 
 ShoppingList.propTypes = {
     getItems: propTypes.func.isRequired,
