@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalBody, Form, FormGroup, Label, Input } from 'reactstrap';
 import { connect } from 'react-redux';
 import { addItem } from '../actions/itemActions';
-import uuid from 'uuid';
 
 class ItemModal extends Component{
     state = {
@@ -25,8 +24,7 @@ class ItemModal extends Component{
     onSubmit = (e) => {
         e.preventDefault(); //so that the form doesn't submit but that we just take the text from the input box since were using Redux
 
-        const newItem = {
-            id: uuid(),
+        const newItem = { //we don't create a new id here or anywhere in our code since mongodb/mlab will create one for us which we will also use
             name: this.state.name
         };
 
