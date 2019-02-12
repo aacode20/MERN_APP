@@ -40,8 +40,9 @@ class ItemModal extends Component{
             <div>
                 <Button
                     color='dark'
-                    style={{marginBottom: '2rem'}}
+                    style={{marginBottom: '2rem', marginLeft:'1rem'}}
                     onClick={this.toggle}
+                    outline
                 >
                     Add Item
                 </Button>
@@ -54,10 +55,7 @@ class ItemModal extends Component{
                     <ModalBody>
                         <Form onSubmit={this.onSubmit}>
                             <FormGroup>
-                                <Label for='item'>
-                                    Name of Item:
-                                </Label>
-                                <Input type="text" name="name" id="item" placeholder="Enter the" onChange={this.onChange} style={{marginBottom:'1rem'}}/>
+                                <Input type="text" name="name" id="item" placeholder="Roll the dice on cheap underwear" onChange={this.onChange} style={{marginBottom:'1rem'}}/>
                                 <Button
                                     color='dark'
                                     style={{ marginBottom: '0.5rem'}}
