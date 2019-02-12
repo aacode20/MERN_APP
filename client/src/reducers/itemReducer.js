@@ -19,7 +19,17 @@ export default function(state=initialState,action){
         case GET_ITEMS:
             return {
                 ...state
-            };
+            }; //each time we return we are returning the previous state, but with updates like here there are none, but in delete_item we filter state.items to filter out an item such that it doesn't exist anymore
+        case DELETE_ITEM:
+            return {
+                ...state,
+                items: state.items.filter(item => item.id !== action.payload )
+            }
+        case ADD_ITEM:
+            return{
+                ...state,
+                items: [action.payload, ...state.items]
+            }
         default: return state;    
     }
 }
